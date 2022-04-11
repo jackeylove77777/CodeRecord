@@ -10,11 +10,11 @@ int[] nums = { 5, 4, 3, 2, 1, 3, 4, 5 };
 Console.WriteLine(isHuiWenArr(nums));//false
 int[] tmp = { 3, 2, 1, 2, 3 };
 Console.WriteLine(isHuiWenArr(tmp));//true
-
+int[] xxx = { 3, 2, 1,1, 2, 3 };
+Console.WriteLine(isHuiWenArr(xxx));//true
 
 bool isHuiWenArr(int[] arr)=>arr switch{
-    [] => false,
-    [_]=> true,
+    [_] or []=> true,
     [var first, .. var mid, var last] => first == last ? isHuiWenArr(mid) : false,
 };
 try
